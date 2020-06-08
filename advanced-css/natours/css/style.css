@@ -23,24 +23,30 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  /* syntax: polygon(top-left, top-right, bottom-right, bottom-left)
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
+     Value pairs of x and y axis are used, relative to the top-left.
 
-.header__logo {
-  height: 3.5rem; }
+     e.g. if `top-right` is `100% 50%` then the next point will start clipping
+     100% to the right of `top-left`, and then 50% down from that point
 
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* This is saying shift the element itself -50% left and top, relative to the
-  current position (absolute to the parent element) */
-  text-align: center; }
+     Or, just use https://bennettfeely.com/clippy/
+   */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* This is saying shift the element itself -50% left and top, relative to the
+     current position (absolute to the parent element) */
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -48,54 +54,20 @@ body {
   backface-visibility: hidden;
   /* Stabalizes any shaking of elements during animation */
   margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 0.6s ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 0.6s ease-out; }
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 0.6s ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 0.6s ease-out; }
-
-@keyframes moveInLeft {
-  /* Browsers are optimized only for opacity and transform! */
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-    /* Begin our animation 100px left of the current element's position */ }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-    /* Resets position */ } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -142,5 +114,36 @@ body {
   animation: moveInBottom 0.4s ease-out 0.4s;
   animation-fill-mode: backwards;
   /* The animation will apply the values defined in the first relevant keyframe
-     as soon as it is applied to the target, and retain this during the
-     animation-delay period */ }
+       as soon as it is applied to the target, and retain this during the
+       animation-delay period */ }
+
+@keyframes moveInLeft {
+  /* Browsers are optimized only for opacity and transform! */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+    /* Begin our animation 100px left of the current element's position */ }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* Resets position */ } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
