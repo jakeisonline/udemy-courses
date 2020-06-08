@@ -66,6 +66,8 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
+  /* Stabalizes any shaking of elements during animation */
 }
 
 .heading-primary-main {
@@ -73,6 +75,7 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation: moveInLeft 0.6s ease-out;
 }
 
 .heading-primary-sub {
@@ -80,4 +83,40 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation: moveInRight 0.6s ease-out;
+}
+
+@keyframes moveInLeft {
+  /* Browsers are optimized only for opacity and transform! */
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+    /* Begin our animation 100px left of the current element's position */
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* Resets position */
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
