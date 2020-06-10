@@ -378,6 +378,41 @@ body {
     width: 100%;
     object-fit: cover; }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #55c57a; }
+    .form__input:focus:invalid {
+      border-color: #ff7730; }
+
+.form__label {
+  /* In the lecture, this label is placed below the input, but I disliked that
+       position. This label will appear above the input, as one would expect */
+  font-size: 1.6rem;
+  font-weight: 700;
+  position: relative;
+  top: -8.5rem;
+  display: block;
+  transition: all 0.3s ease-out; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4rem) translateX(1.6rem); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -475,7 +510,7 @@ body {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
 
 .book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, white 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
