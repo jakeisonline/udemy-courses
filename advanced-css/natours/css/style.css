@@ -1,3 +1,18 @@
+/* Media Query Manager
+
+0 - 600px:      Phone
+600 - 900px:    Tablet Portrait
+900 - 1200px:   Tablet Landscape
+[1200 - 1800]   Desktop (normal styles)
+1800px + :      Big screens
+*/
+/* @include respond(breakpoint)
+
+- phone
+- tab-port
+- tab-land
+- big-desk
+*/
 @keyframes moveInLeft {
   /* Browsers are optimized only for opacity and transform! */
   0% {
@@ -37,7 +52,22 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* em is always equal to the browser font-size (default: 16px), and is the best
+  option to use in media queries */
+  /* em is always equal to the browser font-size (default: 16px), and is the best
+  option to use in media queries */
+  /* em is always equal to the browser font-size (default: 16px), and is the best
+  option to use in media queries */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -45,7 +75,6 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
   padding: 3rem; }
