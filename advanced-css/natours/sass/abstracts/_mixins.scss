@@ -28,11 +28,12 @@
 - tab-port
 - tab-land
 - big-desk
+
+em is always equal to the browser font-size (default: 16px), and is the best
+option to use in media queries
 */
 
 @mixin respond($breakpoint) {
-  /* em is always equal to the browser font-size (default: 16px), and is the best
-  option to use in media queries */
   @if $breakpoint == phone {
     @media (max-width: 37.5em) { @content; }  // 600px
   } @else if $breakpoint == tab-port {
