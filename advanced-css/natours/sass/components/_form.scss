@@ -1,6 +1,20 @@
 .form {
-  &__group:not(:last-child) {
-    margin-bottom: 2rem;
+
+
+  &__group {
+
+    @include respond(tab-port) {
+      margin-top: 4rem;
+
+      & ~ & {
+        // Reset margin-top on all further siblings of __group
+        margin-top: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__input {
@@ -14,6 +28,10 @@
     width: 90%;
     display: block;
     transition: all 0.4s;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
     &:focus {
       outline: none;
@@ -46,6 +64,11 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {
@@ -74,7 +97,11 @@
     display: inline-block;
     position: absolute;
     left: -0.3rem;
-    top: -0.4rem;
+    top: -0.3rem;
+
+    @include respond(tab-land) {
+      border-width: 4px;
+    }
 
     &::after {
       @include absoluteCenter;

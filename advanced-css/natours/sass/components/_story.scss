@@ -4,9 +4,21 @@
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
   background-color: rgba($color-white, 0.7);
   border-radius: 3px;
-  padding: 5rem 6rem 6rem 9rem;
+  padding: 5rem 6rem 7rem 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+
+  @include respond(tab-land) {
+    transform: skewX(0);
+    width: 90%;
+    display: table;
+    padding-bottom: 6rem;
+  }
+
+  @include respond(tab-port) {
+    display: block;
+    padding: 1rem 4rem 4rem 4rem;
+  }
 
   &__shape {
     width: 15rem;
@@ -20,6 +32,25 @@
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
     overflow: hidden;
+
+    @include respond(tab-land) {
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
+      transform: translateX(-4rem) skewX(0) scale(1.2);
+      shape-outside: none;
+      -webkit-shape-outside: none;
+      -webkit-clip-path: circle(32% at 50% 50%);
+      clip-path: circle(32% at 50% 50%);
+    }
+
+    @include respond(tab-port) {
+      display: block;
+      margin: 0 auto;
+      transform: translateX(0) skewX(0) scale(1.1);
+      -webkit-clip-path: circle(30% at 50% 50%);
+      clip-path: circle(30% at 50% 50%);
+    }
   }
 
   &__img {
@@ -30,6 +61,17 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+      display: table-cell;
+      transform: skewX(0);
+    }
+
+    @include respond(tab-port) {
+      text-align: center;
+      display: block;
+    }
   }
 
   &__caption {
