@@ -1,6 +1,6 @@
 .card {
-  perspective: 150rem;
   -moz-perspective: 150rem;
+  perspective: 150rem;
   position: relative;
   height: 50rem;
 
@@ -166,7 +166,7 @@
     font-weight: 100;
   }
 
-  @include respond(tab-port) {
+  @include respond(tab-land) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;

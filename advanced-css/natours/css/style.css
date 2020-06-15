@@ -311,8 +311,8 @@ body {
     transform: translateY(-1.5rem) scale(1.03); }
 
 .card {
-  perspective: 150rem;
   -moz-perspective: 150rem;
+  perspective: 150rem;
   position: relative;
   height: 50rem; }
   .card__side {
@@ -400,7 +400,7 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
-  @media (max-width: 56.25em) {
+  @media (max-width: 75em) {
     .card {
       height: auto;
       border-radius: 3px;
