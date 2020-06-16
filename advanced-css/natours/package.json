@@ -12,13 +12,13 @@
   },
   "scripts": {
     "dev:compile": "node-sass sass/main.scss css/style.css",
-    "dev:watch-sass": "node-sass sass/main.scss css/style.css -w",
+    "dev:watch-sass": "node-sass sass/main.scss css/style.css -w --error-bell",
     "dev:server": "live-server",
 
     "start": "npm-run-all --parallel dev:compile dev:server dev:watch-sass",
 
     "build:compile": "node-sass sass/main.scss css/style.comp.css",
-    "build:prefix": "postcss --use autoprefixer -b \"last 5 versions\" css/style.concat.css -o css/style.prefix.css",
+    "build:prefix": "postcss --use autoprefixer -b \"last 5 versions\" css/style.comp.css -o css/style.prefix.css",
     "build:compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all build:compile build:prefix build:compress"
   },
