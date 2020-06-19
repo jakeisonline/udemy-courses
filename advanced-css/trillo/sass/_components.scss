@@ -116,6 +116,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      top: 3.6rem;
+    }
+
+    @media only screen and (max-width: $bp-tiny) {
+      top: 1rem;
+    }
   }
 
   &__user-photo {

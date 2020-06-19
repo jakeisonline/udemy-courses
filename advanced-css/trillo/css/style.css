@@ -121,6 +121,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 37.5em) {
+      .user-nav__notification {
+        top: 3.6rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .user-nav__notification {
+        top: 1rem; } }
   .user-nav__user-photo {
     height: 3.75rem;
     border-radius: 50%;
