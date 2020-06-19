@@ -13,6 +13,11 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-tiny) {
+    order: 1;
+    flex: 0 0 100%;
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -25,10 +30,18 @@
     transition: all 0.3s;
     margin-right: -3.5rem;
 
+    @media only screen and (max-width: $bp-tiny) {
+      width: 95%;
+    }
+
     &:focus {
       outline: none;
       width: 100%;
       background-color: var(--color-grey-light-3);
+
+      @media only screen and (max-width: $bp-tiny) {
+        width: 95%;
+      }
     }
 
     &::placeholder {
@@ -119,11 +132,24 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
 
     &::before {
@@ -160,6 +186,10 @@
     padding: 1.5rem 3rem;
     position: relative;
     z-index: 10;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
   }
 
   &__icon {
@@ -167,6 +197,11 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; // color property of the current element or parent
+
+    @media only screen and (max-width: $bp-small) {
+      margin: 0;
+      margin-bottom: 0.7rem;
+    }
   }
 }
 
@@ -175,6 +210,10 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 // Gallery
@@ -201,6 +240,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -235,17 +279,29 @@
     margin-left: 3rem;
     color: #fff;
     padding: 0 2.25rem;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -2px;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
@@ -326,12 +382,14 @@
   align-items: center;
   font-size: 1.3rem;
   color: var(--color-grey-dark-3);
+  position: relative;
 
   &__count {
     margin-right: auto;
   }
 
   &__friends {
+    display: flex;
   }
 
   &__photo {
@@ -340,6 +398,7 @@
     border-radius: 50%;
     border: 3px solid #fff;
     box-sizing: content-box;
+    position: relative;
 
     &:not(:last-child) {
       margin-right: -1.5rem;
@@ -356,6 +415,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &::before {
     content: "\201C";
@@ -414,6 +478,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem 0;
+  }
 
   &__book-now {
     font-size: 2rem;
