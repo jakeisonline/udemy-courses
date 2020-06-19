@@ -484,7 +484,7 @@ body {
     .description {
       padding: 2rem;
       margin-right: 3rem; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 37.5em) {
     .description {
       padding: 3rem;
       margin: 0 0 3rem; } }
